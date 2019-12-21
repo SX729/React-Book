@@ -1,5 +1,3 @@
-
-
 ## 1. 关于JSX
 &emsp;JSX 的官方定义是类 XML 语法的 ECMAScript 扩展。它完美地利用了 JavaScript 自带的语法和特性，并使用大家熟悉的 HTML 语法来创建虚拟元素。<br>
 &emsp;JSX 与 React 有什么关系呢？简单来讲，React 为方便 View层组件化，承载了构建 HTML 结构化页面的职责。 React 是通过创建与更新虚拟元素（virtual element）来管理整个 Virtual DOM 的。<br>
