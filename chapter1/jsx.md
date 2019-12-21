@@ -60,7 +60,7 @@ const Header = ({title, titleNext,titleNext2, children}) => {
 {/* 变量titleNext2 = 'Ok2 !' */}
 <Header title="hello world" titleNext='Ok!'titleNext2={titleNext2}>Hello world</Header>
 ```
-界面效果如下：
+界面效果：![](/images/图例1.png)
 
 
 如果事先知道组件需要的全部属性，JSX 可以这样来写：
@@ -79,5 +79,6 @@ component.props.value = value;
 
 ```
 const person = <Person name={window.isLoggedIn ? window.name : ''} />;
+const name = <Person name={this.getName()} />;
 ```
 
