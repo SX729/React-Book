@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
-* [First Chapter](chapter1.md)
-  * [test](chapter1/test.md)
+* [概述](README.md)
+* [React基本知识](chapter1.md)
+  * [JSX语法](chapter1/test.md)
 
