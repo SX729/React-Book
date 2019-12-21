@@ -49,7 +49,7 @@
 ```
 ### (3) 元素属性
 &emsp;在 JSX 中，不论是DOM元素还是组件元素，它们都有属性。不同的是：<br>
-- DOM元素的属性是标准规范属性，往DOM元素中传入自定义属性，React是不会渲染的,但是类名class是个例外，==class 属性改为className==。并且标签自带的属性无法传递<br>
+- DOM元素的属性是标准规范属性，往DOM元素中传入自定义属性，React是不会渲染的,但是类名class是个例外，==class 属性改为className。并且标签自带的属性无法传递<br>
 - 自定义标签的属性可以传递，在写==自定义属性==的时候，都由标准写法改为==小驼峰写法==。如果需要传递的属性是个变量/表达式，则将变量/表达式包裹在{}中：
 ```
 const Header = ({title, titleNext,titleNext2, children}) => { 
@@ -61,7 +61,7 @@ const Header = ({title, titleNext,titleNext2, children}) => {
 <Header title="hello world" titleNext='Ok!'titleNext2={titleNext2}>Hello world</Header>
 ```
 界面效果如下：
-![image](C2CBD38E83C147BC90A42CAA4824619D)
+
 
 如果事先知道组件需要的全部属性，JSX 可以这样来写：
 
