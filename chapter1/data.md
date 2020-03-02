@@ -67,11 +67,44 @@
 ```
 注意：
 
-&emsp;&emsp;不要直接去操作this.state， 这样会造成不必要的性能问题和隐患。只有通过父组件重新渲染的方式才可以把新的props传入组件中(详见父子组件通信)。
+- 不要直接去操作this.state， 这样会造成不必要的性能问题和隐患。只有通过父组件重新渲染的方式才可以把新的props传入组件中(详见父子组件通信)。
+```
+    handleTabClick(activeIndex) { 
+    // ...
+    this.props.onChange({activeIndex, prevIndex});
+    }
+```
 
-除了组件自定义的props(父子传值)，还有一些react已经封装好的props属性，包括：
-- **this.props.children** : 表示组件的所有子节点;
-  &emsp;&emsp;如果当前组件没有子节点，它就是 undefined ;如果有一个子节点，数据类型是 object ；如果有多个子节点，数据类型就是 array 。
+- PropTypes 提供一系列验证器，可用于确保组件接收到的数据类型是有效的。当传入的 prop 值类型不正确时，JavaScript 控制台将会显示警告。出于性能方面的考虑，propTypes 仅在开发模式下进行检查。
+```
+mport PropTypes from 'prop-types';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      <h1>Hello, {this.props.name}</h1>
+    );
+  }
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string
+};
+export default Greeting
+```
+常见得有以下类型检查：
+> optionalArray: PropTypes.array,
+> optionalBool: PropTypes.bool,
+> optionalFunc: PropTypes.func,
+> optionalNumber: PropTypes.number,
+> optionalObject: PropTypes.object,
+> optionalString: PropTypes.string,
+
+- 除了组件自定义的props(父子传值)，还有一些react已经封装好的props属性，包括：
+
+**this.props.children** : 
+
+  &emsp;&emsp;表示组件的所有子节点;如果当前组件没有子节点，它就是 undefined ;如果有一个子节点，数据类型是 object ；如果有多个子节点，数据类型就是 array 。
 
   &emsp;&emsp;React 提供一个工具方法 React.Children 来处理 this.props.children 。我们可以用 React.Children.map 来遍历子节点，而不用担心 this.props.children 的数据类型是 undefined 还是 object。
   ```
@@ -87,7 +120,10 @@
         );
     }
   ```
-- **this.props.dispatch** : 当用React Redux的connect进行封装的时候，connect方法会把dispatch放到props中,使用this.props.dispatch方法派发，https://www.jianshu.com/p/6482f4785929:
+
+**this.props.dispatch** : 
+
+&emsp;&emsp;当用React Redux的connect进行封装的时候，connect方法会把dispatch放到props中,使用this.props.dispatch方法派发，https://www.jianshu.com/p/6482f4785929:
 
   Redux：
   ```
@@ -108,7 +144,10 @@
     })
     export default connect(mapStateToProps, mapDispatchToProps)(LayoutDesigner) ;
   ```
-- **this.props.history** : 实现跳转页面.我们在使用this.props.hostory.push不成功的时候，其实是props没有history这个对象,需要在使用withRouter这个包裹之后方能使用：
+
+**this.props.history** : 
+
+&emsp;&emsp;实现跳转页面.我们在使用this.props.hostory.push不成功的时候，其实是props没有history这个对象,需要在使用withRouter这个包裹之后方能使用：
   ```
     import React from "react";
     import {withRouter} from "react-router-dom";
