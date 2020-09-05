@@ -90,6 +90,7 @@ class App extends Component {
     }
 }
 ```
+动态组件如何获取ref?
 ### 3.React以外的Dom操作
 &emsp;&emsp;尽量减少，但是有时无法避免。比如当点击组件以外区域时可以收缩此类组件：
 ```
