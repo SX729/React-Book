@@ -90,8 +90,6 @@ class App extends Component {
     }
 }
 ```
-
-动态组件如何获取refs?
 动态组件如何获取?
 
 ### 3.React以外的Dom操作
